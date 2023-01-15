@@ -44,7 +44,13 @@ app.get("/compose", (req, res) => {
 });
 
 app.get("/posts/:blogTitle", (req, res) => {
-  console.log(req.params);
+  homeStartingPosts.forEach((post) => {
+    if (post.blogTitle === req.params.blogTitle) {
+      console.log("Match found!");
+    } else {
+      console.log("Match nof found :(.");
+    }
+  });
 });
 
 app.post("/compose", (req, res) => {
