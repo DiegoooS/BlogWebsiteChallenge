@@ -43,6 +43,10 @@ app.get("/compose", (req, res) => {
   res.render("compose");
 });
 
+app.get("/posts/:blogTitle", (req, res) => {
+  console.log(req.params);
+});
+
 app.post("/compose", (req, res) => {
   let post = {
     blogTitle: req.body.blogTitle,
