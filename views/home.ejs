@@ -5,11 +5,9 @@
 <p><%= homeStartingContent %></p>
 
 <% homeStartingPosts.forEach(post => { %>
-    <% console.log(post.blogTitle) %> 
-
     <h1><%= post.blogTitle %></h1>
 
-    <p><%= post.blogPost %></p>
+    <p><%= post.blogPost.substring(0, 100) + " ..." %></p>
 <% }) %>
  
 <%- include("partials/footer.ejs") %>

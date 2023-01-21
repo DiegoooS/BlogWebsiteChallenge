@@ -44,7 +44,7 @@ app.get("/compose", (req, res) => {
   res.render("compose");
 });
 
-app.get("/posts/:blogTitle", (req, res) => { 
+app.get("/posts/:blogTitle", (req, res) => {
   homeStartingPosts.forEach((post) => {
     if (_.kebabCase(post.blogTitle) === _.kebabCase(req.params.blogTitle)) {
       res.render("post", {
