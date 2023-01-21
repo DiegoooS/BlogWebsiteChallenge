@@ -44,14 +44,13 @@ app.get("/compose", (req, res) => {
   res.render("compose");
 });
 
-app.get("/posts/:blogTitle", (req, res) => {
-  console.log(_.kebabCase(req.params.blogTitle));
-
+app.get("/posts/:blogTitle", (req, res) => { 
   homeStartingPosts.forEach((post) => {
     if (_.kebabCase(post.blogTitle) === _.kebabCase(req.params.blogTitle)) {
-      console.log("Match found!");
-    } else {
-      console.log("Match nof found :(.");
+      res.render("post", {
+        blogTitle: post.blogTitle,
+        blogPost: post.blogPost,
+      });
     }
   });
 });
